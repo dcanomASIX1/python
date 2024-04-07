@@ -28,3 +28,42 @@
             print("Error: no s'ha pogut llegir el fitxer de comarques.")
 
 ```
+
+# Guardar en otro archivo
+
+```
+ fitxerE = open(rutaFitxerE, "w")
+    for x in poblacionsC[comarca]: 
+        fitxerE.write(f"{x};{poblacionsC[comarca][x]}\n")
+
+
+        finally:
+            fitxerL.close()
+
+
+```
+
+## Possibles errorres
+
+```
+except:
+     print("Error general al bucle")
+# Fuera del bucle
+ except:
+     print("Error en obrir el fitxer d'escriptura.")
+
+```
+
+
+# Menu
+```
+  while not sortir:
+                    try:
+                        if not paramEntrada:
+                            menu='''
+                            1. Introduir Comarca
+                            2. Sortir
+                            Escull una opció: '''
+                            opcio=int(input(menu))
+                        if opcio==1:
+```
