@@ -9,15 +9,26 @@
 # Diferenciar si trabajas con fichero nuevo o diferente
 
 ```
+#proces per comprovar si es treballara amb un fitxer existent i si es aixi agafar la direcció del mateix
+fitxerNou = False
 if len(sys.argv)>2:
             fichero=sys.argv[2]
             ruta=os.path.dirname(__file__)
             rutaConjunta=os.path.join(ruta,fichero)
             split = os.path.splitext(fichero)
             extensio = split[1] 
+            formato = "%Y-%m-%d %H:%M:%S.%f"
             print (fichero)            
 else:
             fitxerNou = True
+
+if fitxerNou == False: 
+    #en cas de que es treballi amb un fitxer ja existent l'obrim amb lectura i comprovem que la direccio existeix
+    if os.path.exists(rutaConjunta) :
+                        archivo = open(rutaConjunta, "r")
+                        print(f"Anem a treballar amb el fitxer {fichero}")
+    else:
+                    raise FileNotFoundError("Error en obrir el fitxer de les pagines.")
 
 ```
 
