@@ -57,6 +57,9 @@ except:
 
 # Menu
 ```
+
+sortir=False
+opcio=1
   while not sortir:
                     try:
                         if not paramEntrada:
